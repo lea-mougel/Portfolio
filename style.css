@@ -4,7 +4,7 @@
 :root {
     --primary-color: #563262;    /* Violet MIAGE principal */
     --accent-color: #9034db;     /* Violet clair pour les actions */
-    --bg-color: #fdfbff;         /* Fond légèrement teinté */
+    --bg-color: #fdfbff;         /* Fond très légèrement teinté */
     --card-bg: rgba(255, 255, 255, 0.9);
     --text-color: #2d1f33;
     --white: #ffffff;
@@ -22,25 +22,31 @@ body {
     min-height: 100vh;
 }
 
-/* --- HEADER & NAVIGATION --- */
+/* --- HEADER & NAVIGATION RESPONSIVE (Unités relatives) --- */
 header {
     background: rgba(86, 50, 98, 0.95);
     backdrop-filter: blur(10px);
     color: var(--white);
-    padding: 10px 0;
+    
+    /* Hauteur proportionnelle à l'écran */
+    padding-top: 2.5vh; 
+    padding-bottom: 2.5vh; 
+    
     width: 100%;
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 header h1 {
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    text-transform: none; /* Respecte la casse de ton nom  */
-    margin: 0 0 10px 0;
+    font-size: 1.3rem; 
+    margin-top: 0;
+    margin-bottom: 2.5vh;
     text-align: center;
+    letter-spacing: 1px;
+    text-transform: none; /* Respecte la casse de ton nom en HTML */
 }
 
 nav ul {
@@ -49,15 +55,18 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Permet aux liens de passer à la ligne sur mobile */
-    gap: 15px 25px; /* Espace vertical et horizontal entre les liens */
+    flex-wrap: wrap; /* Passage à la ligne sur mobile */
+    gap: 1.5vh 4vw; /* Écart fluide */
 }
+
 header nav a {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    font-size: 0.85rem;
-    white-space: nowrap; /* Empêche un mot d'un lien de se couper en deux */
+    font-size: 0.95rem;
+    font-weight: 500;
+    white-space: nowrap;
     transition: all 0.3s ease;
+    padding: 0.5vh 0; 
 }
 
 header nav a:hover, header nav a b {
@@ -69,13 +78,13 @@ header nav a:hover, header nav a b {
 main {
     width: 90%; 
     max-width: 850px; 
-    margin: 40px auto;
+    margin: 5vh auto;
 }
 
 section {
     background: var(--card-bg);
     backdrop-filter: blur(5px);
-    margin-bottom: 25px;
+    margin-bottom: 3vh;
     padding: 4%; 
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -90,7 +99,7 @@ h2 {
     display: flex;
     align-items: center;
     border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
+    padding-bottom: 1vh;
 }
 
 h2::before {
@@ -109,7 +118,7 @@ h2::before {
 }
 
 .clickable-list li {
-    margin: 15px 0;
+    margin: 1.5vh 0;
 }
 
 .clickable-list a {
@@ -140,12 +149,7 @@ h2::before {
     text-transform: uppercase;
 }
 
-.clickable-list a:hover .file-type {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
-}
-
-/* --- BOUTONS --- */
+/* --- BOUTONS (CV & LinkedIn) --- */
 .btn {
     display: inline-block;
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
@@ -153,10 +157,11 @@ h2::before {
     padding: 12px 24px;
     text-decoration: none;
     border-radius: 12px;
-    margin-top: 20px;
+    margin-top: 2vh;
     font-size: 0.9rem;
     font-weight: 600;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(86, 50, 98, 0.2);
 }
 
 .btn:hover {
@@ -164,10 +169,22 @@ h2::before {
     opacity: 0.9;
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 600px) {
+    header {
+        padding-top: 2.5vh;
+        padding-bottom: 2.5vh;
+    }
+    
+    header h1 {
+        font-size: 1.1rem;
+    }
+
     nav ul {
-        flex-wrap: wrap;
-        gap: 15px;
+        gap: 12px 20px;
+    }
+
+    main {
+        width: 95%;
     }
 }
