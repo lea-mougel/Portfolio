@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
 :root {
-    --primary-color: #2c3e50;    /* Bleu nuit professionnel */
-    --accent-color: #3498db;     /* Bleu clair pour le survol */
+    --primary-color: #563262;    /* Bleu nuit professionnel */
+    --accent-color: #9034db;     /* Bleu clair pour le survol */
     --bg-color: #f4f7f6;         /* Fond gris très clair */
     --text-color: #333;
     --white: #ffffff;
