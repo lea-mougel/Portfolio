@@ -2,10 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
 :root {
-    --primary-color: #563262;    /* Bleu nuit professionnel */
-    --accent-color: #9034db;     /* Bleu clair pour le survol */
-    --bg-color: #f4f7f6;         /* Fond gris très clair */
-    --text-color: #333;
+    --primary-color: #563262;    /* Ton violet principal [cite: 1] */
+    --accent-color: #9034db;     /* Ton violet clair  */
+    --bg-color: #fdfbff;         /* Fond très légèrement teinté  */
+    --card-bg: rgba(255, 255, 255, 0.8);
+    --text-color: #2d1f33;
     --white: #ffffff;
 }
 
@@ -14,23 +15,29 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
+    background-image: radial-gradient(circle at top right, #f3e8ff 0%, #fdfbff 100%);
     margin: 0;
     padding: 0;
+    min-height: 100vh;
 }
 
-/* Header réduit en hauteur */
+/* --- HEADER & NAVIGATION --- */
 header {
-    background-color: var(--primary-color);
+    background: rgba(86, 50, 98, 0.95);
+    backdrop-filter: blur(10px);
     color: var(--white);
-    padding: 10px 0; /* Hauteur réduite */
+    padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
 }
 
 header h1 {
-    font-size: 1.2rem; /* Taille du titre réduite */
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     margin: 0 0 10px 0;
     text-align: center;
 }
@@ -41,80 +48,135 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 30px;
 }
 
 header nav a {
-    color: #ffffff; /* Blanc pour contraster avec le bleu nuit */
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
 }
 
-header nav a:hover {
-    color: #bdc3c7; /* Gris clair au survol */
+header nav a:hover, header nav a b {
+    color: var(--white);
+    text-shadow: 0 0 8px rgba(255,255,255,0.5);
 }
 
-
-/* Style spécifique pour le lien de la page actuelle (optionnel) */
-nav a.active {
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 3px;
-}
-
-/* Sections */
+/* --- CONTENU PRINCIPAL --- */
 main {
-    max-width: 900px;
-    margin: 30px auto;
+    max-width: 850px;
+    margin: 40px auto;
     padding: 0 20px;
 }
 
 section {
-    background: var(--white);
-    margin-bottom: 20px;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    background: var(--card-bg);
+    backdrop-filter: blur(5px);
+    margin-bottom: 25px;
+    padding: 35px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(86, 50, 98, 0.05); 
 }
 
 h2 {
     color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.5rem;
     margin-top: 0;
-    border-bottom: 2px solid #eee;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #eee; 
     padding-bottom: 10px;
 }
 
-/* Boutons */
+h2::before {
+    content: "";
+    width: 4px;
+    height: 24px;
+    background: var(--accent-color);
+    margin-right: 12px;
+    border-radius: 10px;
+}
+
+/* --- LISTES DE FICHIERS CLIQUABLES --- */
+.clickable-list {
+    padding: 0;
+    list-style: none;
+}
+
+.clickable-list li {
+    margin: 15px 0;
+    padding: 0;
+    transition: transform 0.2s ease;
+}
+
+.clickable-list li:hover {
+    transform: translateX(10px);
+}
+
+.clickable-list a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 25px;
+    background: rgba(144, 52, 219, 0.05);
+    border-left: 5px solid var(--primary-color);
+    border-radius: 12px;
+    text-decoration: none !important;
+    color: var(--primary-color) !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.clickable-list a:hover {
+    background: var(--primary-color);
+    color: var(--white) !important;
+    box-shadow: 0 8px 15px rgba(86, 50, 98, 0.2);
+}
+
+/* Petit badge pour le type de fichier */
+.file-type {
+    font-size: 0.75rem;
+    background: rgba(86, 50, 98, 0.1);
+    padding: 4px 8px;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+.clickable-list a:hover .file-type {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* --- BOUTONS (CV & LINKEDIN) --- */
 .btn {
     display: inline-block;
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 8px 18px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white) !important;
+    padding: 12px 24px;
     text-decoration: none;
-    border-radius: 6px;
-    margin-top: 15px;
+    border-radius: 12px;
+    margin-top: 20px;
     font-size: 0.9rem;
-    transition: opacity 0.3s;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(144, 52, 219, 0.3);
+    transition: all 0.3s ease; 
 }
 
 .btn:hover {
-    opacity: 0.8;
-    color: #bdc3c7; 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(144, 52, 219, 0.4);
+    color: #bdc3c7 !important; 
 }
 
-/* Responsive */
+/* --- RESPONSIVE --- */
 @media (max-width: 600px) {
     nav ul {
         flex-direction: column;
         align-items: center;
-        gap: 8px;
+        gap: 12px;
     }
-}nav a, section a {
-    color: #563262; /* Mets ta couleur ici */
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-/* Couleur des liens au survol de la souris (Hover) */
-nav a:hover, section a:hover {
-    color: #9034db; /* Une nuance un peu plus foncée pour l'effet de survol */
-    text-decoration: underline;
 }
