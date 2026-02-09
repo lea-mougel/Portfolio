@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 
 :root {
-    --primary-color: #563262;    /* Ton violet principal [cite: 1] */
-    --accent-color: #9034db;     /* Ton violet clair  */
-    --bg-color: #fdfbff;         /* Fond très légèrement teinté  */
-    --card-bg: rgba(255, 255, 255, 0.8);
+    --primary-color: #563262;    /* Violet MIAGE principal */
+    --accent-color: #9034db;     /* Violet clair pour les actions */
+    --bg-color: #fdfbff;         /* Fond légèrement teinté */
+    --card-bg: rgba(255, 255, 255, 0.9);
     --text-color: #2d1f33;
     --white: #ffffff;
 }
@@ -18,6 +18,7 @@ body {
     background-image: radial-gradient(circle at top right, #f3e8ff 0%, #fdfbff 100%);
     margin: 0;
     padding: 0;
+    width: 100%; 
     min-height: 100vh;
 }
 
@@ -27,17 +28,17 @@ header {
     backdrop-filter: blur(10px);
     color: var(--white);
     padding: 15px 0;
+    width: 100%;
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
 }
 
 header h1 {
     font-size: 1.1rem;
     letter-spacing: 1px;
-    text-transform: none; 
+    text-transform: none; /* Respecte la casse de ton nom  */
     margin: 0 0 10px 0;
     text-align: center;
 }
@@ -48,14 +49,13 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 3%; /* Espacement fluide  */
 }
 
 header nav a {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     font-size: 0.9rem;
-    font-weight: 400;
     transition: all 0.3s ease;
 }
 
@@ -64,31 +64,31 @@ header nav a:hover, header nav a b {
     text-shadow: 0 0 8px rgba(255,255,255,0.5);
 }
 
-/* --- CONTENU PRINCIPAL --- */
+/* --- SECTIONS (CARTES) --- */
 main {
-    max-width: 850px;
+    width: 90%; 
+    max-width: 850px; 
     margin: 40px auto;
-    padding: 0 20px;
 }
 
 section {
     background: var(--card-bg);
     backdrop-filter: blur(5px);
     margin-bottom: 25px;
-    padding: 35px;
+    padding: 4%; 
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 10px 30px rgba(86, 50, 98, 0.05); 
+    box-shadow: 0 10px 30px rgba(86, 50, 98, 0.05);
 }
 
 h2 {
     color: var(--primary-color);
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-top: 0;
     display: flex;
     align-items: center;
-    border-bottom: 2px solid #eee; 
+    border-bottom: 2px solid #eee;
     padding-bottom: 10px;
 }
 
@@ -101,7 +101,7 @@ h2::before {
     border-radius: 10px;
 }
 
-/* --- LISTES DE FICHIERS CLIQUABLES --- */
+/* --- LISTES DE DOCUMENTS CLIQUABLES --- */
 .clickable-list {
     padding: 0;
     list-style: none;
@@ -109,19 +109,13 @@ h2::before {
 
 .clickable-list li {
     margin: 15px 0;
-    padding: 0;
-    transition: transform 0.2s ease;
-}
-
-.clickable-list li:hover {
-    transform: translateX(10px);
 }
 
 .clickable-list a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 25px;
+    padding: 18px 5%;
     background: rgba(144, 52, 219, 0.05);
     border-left: 5px solid var(--primary-color);
     border-radius: 12px;
@@ -134,10 +128,9 @@ h2::before {
 .clickable-list a:hover {
     background: var(--primary-color);
     color: var(--white) !important;
-    box-shadow: 0 8px 15px rgba(86, 50, 98, 0.2);
+    transform: translateX(10px);
 }
 
-/* Petit badge pour le type de fichier */
 .file-type {
     font-size: 0.75rem;
     background: rgba(86, 50, 98, 0.1);
@@ -151,7 +144,7 @@ h2::before {
     color: white;
 }
 
-/* --- BOUTONS (CV & LINKEDIN) --- */
+/* --- BOUTONS --- */
 .btn {
     display: inline-block;
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
@@ -162,21 +155,18 @@ h2::before {
     margin-top: 20px;
     font-size: 0.9rem;
     font-weight: 600;
-    box-shadow: 0 4px 15px rgba(144, 52, 219, 0.3);
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(144, 52, 219, 0.4);
-    color: #bdc3c7 !important; 
+    opacity: 0.9;
 }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 12px;
+        flex-wrap: wrap;
+        gap: 15px;
     }
 }
