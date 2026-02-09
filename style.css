@@ -1,0 +1,111 @@
+/* Importation d'une police moderne */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #2c3e50;    /* Bleu nuit professionnel */
+    --accent-color: #3498db;     /* Bleu clair pour le survol */
+    --bg-color: #f4f7f6;         /* Fond gris très clair */
+    --text-color: #333;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header réduit en hauteur */
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 0; /* Hauteur réduite */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 1.2rem; /* Taille du titre réduite */
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Style spécifique pour le lien de la page actuelle (optionnel) */
+nav a.active {
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 3px;
+}
+
+/* Sections */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+section {
+    background: var(--white);
+    margin-bottom: 20px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 8px 18px;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    transition: opacity 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+}
