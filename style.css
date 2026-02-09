@@ -108,4 +108,14 @@ h2 {
         align-items: center;
         gap: 8px;
     }
+}nav a, section a {
+    color: #563262; /* Mets ta couleur ici */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Couleur des liens au survol de la souris (Hover) */
+nav a:hover, section a:hover {
+    color: #9034db; /* Une nuance un peu plus foncée pour l'effet de survol */
+    text-decoration: underline;
 }
