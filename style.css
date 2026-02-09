@@ -44,14 +44,14 @@ nav ul {
     gap: 25px;
 }
 
-nav a {
-    color: var(--white);
+header nav a {
+    color: #ffffff; /* Blanc pour contraster avec le bleu nuit */
     text-decoration: none;
-    font-weight: 400;
-    font-size: 0.95rem;
-    transition: color 0.3s;
 }
 
+header nav a:hover {
+    color: #bdc3c7; /* Gris clair au survol */
+}
 nav a:hover {
     color: var(--accent-color);
 }
