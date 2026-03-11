@@ -18,12 +18,11 @@ Ce projet consiste en la conception et la réalisation d'une application web de 
 Le CRM a été adapté pour répondre aux enjeux de **Dassault Systèmes**, où le cycle de vente de logiciels complexes (B2B) nécessite un suivi rigoureux.
 * **Gestion des prospects :** Centralisation et suivi des leads depuis la prise de contact jusqu'à la conversion.
 * **Pipeline métier :** Mise en place d'un tunnel de vente personnalisé pour visualiser l'étape du cycle de vente (Démonstration, POC, Négociation).
-* **Automatisation :** Envoi d'emails automatiques suite aux interactions des utilisateurs avec les produits.
+* **Automatisation :** Envoi d'emails automatiques suite aux interactions des utilisateurs avec les produits. (pas encore fonctionnel)
 
 ---
 
 ## 3. Architecture Technique
-Le projet utilise une stack technologique "Zero Serveur" pour minimiser l'administration système.
 
 | Composant | Technologie | Rôle |
 | :--- | :--- | :--- |
@@ -37,12 +36,12 @@ Le projet utilise une stack technologique "Zero Serveur" pour minimiser l'admini
 ---
 
 ## 4. Modélisation des Données (MCD)
-La base de données PostgreSQL est structurée autour d'entités principales pour assurer la cohérence des informations :
-* **Profiles :** Gestion des utilisateurs de l'application et de leurs rôles (Admin, Commercial, Utilisateur standard).
-* **Companies :** Centralisation des informations sur les entreprises partenaires et clientes.
-* **Contacts :** Fiches détaillées des interlocuteurs liés aux entreprises.
-* **Leads :** Suivi des opportunités commerciales avec attribution à un commercial spécifique.
-* **Contact_notes :** Historique des interactions et notes pour chaque prospect.
+
+![MCD du projet CRM](MCD.png)
+
+### Diagramme de Use Case
+
+![Use Case du projet CRM](uc.png)
 
 ---
 
@@ -52,7 +51,7 @@ L'application CRM intègre les modules fondamentaux requis par le cahier des cha
 * **Pipeline de vente :** Visualisation graphique du funnel de conversion et suivi des étapes de vente.
 * **Gestion des tâches :** Création de rappels et planification de rendez-vous.
 * **Dashboard Analytique :** Affichage des indicateurs de performance (KPI) sur les leads et les conversions.
-* **Communication :** Programmation d'emails automatiques et modèles personnalisables.
+* **Communication :** Programmation d'emails automatiques et modèles personnalisables. (pas encore fonctionnel)
 
 ---
 
