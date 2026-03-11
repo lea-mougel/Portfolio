@@ -22,21 +22,56 @@
         </nav>
     </header>
 <main>
-    <link rel="stylesheet" href="style.css">
-
     <section>
         <h2>Rubrique 4 : Projet Final CRM</h2>
-        <p>Conception et réalisation d'un projet numérique complet.</p>
+        <p>
+            <strong>Contexte :</strong> Conception et developpement d'une application CRM fullstack
+            pour gerer un cycle commercial complet: contacts, entreprises, leads,
+            pipeline, taches et communications.
+            Entreprise prise en exemple : <em>Dassault Systèmes</em>
+        </p>
+        
+        <div class="crm-details">
+            <h3>Stack Technique</h3>
+            <ul>
+                <li><strong>Frontend :</strong> Next.js (App Router), TypeScript, Tailwind CSS.</li>
+                <li><strong>Backend :</strong> API REST NestJS + TypeScript.</li>
+                <li><strong>Auth & Donnees :</strong> Supabase Auth + PostgreSQL.</li>
+                <li><strong>Emails :</strong> Brevo pour l'envoi et l'historisation des communications.</li>
+                <li><strong>Roles :</strong> admin, commercial, user (droits filtres cote frontend/backend).</li>
+            </ul>
+        </div>
+
+        <div class="crm-details">
+            <h3>Fonctionnalites techniques realisees</h3>
+            <ul>
+                <li>Authentification complete (signup/login/logout) via Supabase.</li>
+                <li>CRUD contacts, entreprises et leads avec recherche/filtrage.</li>
+                <li>Pipeline de vente en vue colonnes et tableau + insights.</li>
+                <li>Module admin pour suivi des commerciaux.</li>
+                <li>Gestion des taches liees aux contacts/leads.</li>
+                <li>Module communications avec envoi email Brevo.</li>
+            </ul>
+        </div>
+
         <div class="crm-content">
-            <h3>Livrable Principal</h3>
-            <p>Documentation technique du projet CRM.</p>
-            <a href="" class="btn">Consulter la documentation</a>
+            <h3>Livrables du Projet</h3>
+            <p>
+                Le projet inclut la documentation technique frontend/backend,
+                la modelisation des donnees (MCD/ER), les cas d'usage et le code source.
+            </p>
+            <div class="btn-group">
+                <a href="projet/rapport.pdf" class="btn">Consulter le Rapport (PDF)</a>
+                <a href="https://projet-crm-nine.vercel.app/login" class="btn">Accéder à l'Application</a>
+                <a href="https://github.com/lea-mougel/Projet_CRM" class="btn">Voir le Code Source</a>
+            </div>
         </div>
     </section>
+
     <section>
-        <h2>Rubrique 5 : Soutenance</h2>
-        <p>Diaporama structuré pour la présentation orale du projet.</p>
-        <a href="" class="btn">Télécharger le Diaporama</a>
+        <h2>Rubrique 5 : Soutenance & Présentation</h2>
+        <p>Présentation structurée détaillant l'architecture logicielle et les workflows de vente personnalisés.</p>
+        <a href="projet/diapo_v1.pdf" class="btn">Consulter le Diaporama (PDF)</a>
     </section>
 </main>
 </body>
