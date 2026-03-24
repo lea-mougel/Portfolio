@@ -1,0 +1,126 @@
+main.project-page {
+    width: 90%;
+    max-width: 980px;
+    margin: 5vh auto;
+}
+
+.project-shell {
+    background: var(--card-bg);
+    backdrop-filter: blur(5px);
+    margin-bottom: 3vh;
+    padding: 4%;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(86, 50, 98, 0.05);
+}
+
+.project-name {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.project-description,
+.project-languages,
+.project-skills,
+.project-shell p,
+.project-shell li {
+    color: var(--text-color);
+}
+
+.img_projet {
+    width: 100%;
+    margin: 0 0 2rem;
+}
+
+.img_projet img,
+.img_taches img,
+.project-inline-image {
+    width: 100%;
+    display: block;
+    border-radius: 16px;
+    border: 1px solid rgba(86, 50, 98, 0.15);
+    box-shadow: 0 10px 30px rgba(86, 50, 98, 0.12);
+}
+
+.langagesOutils {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0 2rem;
+}
+
+.langagesDIV,
+.outilsDIV {
+    background: rgba(144, 52, 219, 0.05);
+    border-left: 5px solid var(--primary-color);
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
+}
+
+.div_taches {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.txt_taches,
+.img_taches {
+    width: auto;
+}
+
+.txt_taches {
+    background: rgba(255, 255, 255, 0.55);
+    border-radius: 16px;
+    padding: 1.25rem;
+}
+
+h3 {
+    color: var(--primary-color);
+    font-size: 1.15rem;
+    margin-top: 0;
+    margin-bottom: 0.9rem;
+    border-bottom: 2px solid rgba(144, 52, 219, 0.2);
+    padding-bottom: 0.6rem;
+}
+
+.project-code-title {
+    color: var(--primary-color);
+    margin: 2.5rem 0 1rem;
+}
+
+.project-page .btn,
+.project-page .bouton {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white) !important;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(86, 50, 98, 0.2);
+}
+
+.project-page .bouton:hover,
+.project-page .btn:hover {
+    opacity: 0.92;
+}
+
+.project-back {
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 760px) {
+    .langagesOutils,
+    .div_taches {
+        grid-template-columns: 1fr;
+    }
+
+    .project-name {
+        font-size: 1.6rem;
+    }
+}

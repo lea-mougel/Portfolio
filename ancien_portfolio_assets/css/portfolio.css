@@ -1,0 +1,160 @@
+/* base */
+
+/* Réinitialisation des styles par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Styles pour le corps de la page */
+body {
+    font-family:'Century Gothic';
+    background-color: white;
+    color: #7469B6;
+}
+
+/* Styles pour les titres */
+h1, h2, h3 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Styles pour les liens */
+a {
+    color: #7469B6;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Mise en page */
+
+/* Conteneur principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 40px;
+}
+
+/* Grille pour les projets */
+.project {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.project img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Styles pour le header (navigation) */
+header {
+    background-color: #FFE6E6; /* Couleur de fond */
+    color: #7469B6; /* Couleur du texte */
+    padding-top: 2%; 
+	padding-bottom:2%; 
+    text-align: center; /* Centrage du contenu */
+}
+
+/* Styles pour les liens de navigation */
+header ul {
+    list-style: none; /* Supprime les puces des listes */
+    padding: 0; /* Supprime le padding par défaut des listes */
+    display: flex; /* Affiche les éléments de la liste côte à côte */
+    justify-content: center; /* Centre les éléments horizontalement */
+}
+
+header li {
+    margin-right: 7%; /* Espacement entre les éléments de liste */
+}
+
+/* Supprime le margin-right du dernier élément de la liste Afin que le nv reste centré*/
+header li:last-child {
+    margin-right: 0;
+}
+
+header a {
+    color: #7469B6; /* Couleur des liens */
+    text-decoration: none; /* Pas de soulignement */
+    font-weight: bold; /* Texte en gras */
+    transition: color 0.3s; /* Transition de couleur au survol */
+}
+
+/* Au survol des liens */
+header a:hover {
+    color: #AD88C6; /* Couleur des liens au survol */
+}
+
+#page-sel{
+	color: #AD88C6;
+	text-decoration:underline;
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #7469B6;
+    border: none;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* Footer */
+/* Styles pour le footer de contact */
+.contact-footer {
+ 	/*position: fixed;
+    bottom: 0;
+    left: 0;*/
+    width: 100%;
+    background-color: #FFE6E6;
+    padding: 20px;
+    text-align: center;
+	
+}
+
+.contact-footer p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contact-footer ul {
+    list-style: none;
+    padding: 0;
+	display: flex;
+	justify-content: center;
+}
+
+.contact-footer li {
+    margin-right: 7%; /* Espacement entre les éléments de liste */
+}
+
+/* Supprime le margin-right du dernier élément de la liste Afin que le nv reste centré*/
+.contact-footer li:last-child {
+    margin-right: 0;
+}
+
+
+.contact-footer img {
+	width:30px;
+    text-decoration: none;
+	border:none;
+}
+
+.contact-footer img:hover {
+	cursor: pointer;
+}
+
+
